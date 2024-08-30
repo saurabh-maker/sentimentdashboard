@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>Sentiment Review Dashboard</h1>
+            <input type="file" id="fileUpload" />
+        </div>
+
+        <div class="insights-section">
+            <div class="insight">
+                <h3>Total Reviews</h3>
+                <p id="totalReviews">0</p>
+            </div>
+            <div class="insight">
+                <h3>Total Pros</h3>
+                <p id="totalPros">0</p>
+            </div>
+            <div class="insight">
+                <h3>Total Cons</h3>
+                <p id="totalCons">0</p>
+            </div>
+            <div class="insight">
+                <h3>Total Responses</h3>
+                <p id="totalResponses">0</p>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <canvas id="regionChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="locationChart"></canvas>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <label for="regionFilter">Filter by Region:</label>
+            <select id="regionFilter" onchange="filterData()">
+                <option value="">All Regions</option>
+            </select>
+            <button onclick="clearFilters()">Clear Filters</button>
+        </div>
+
+        <div class="table-section">
+            <table id="dataTable">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
